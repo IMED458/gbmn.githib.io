@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FileText, CheckCircle2, ListChecks, HelpCircle, ArrowRight, Download, Mail } from 'lucide-react';
+import { FileText, CheckCircle2, ListChecks, HelpCircle, ArrowRight, Download, Mail, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function ForAuthors() {

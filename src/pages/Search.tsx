@@ -152,7 +152,6 @@ export default function Search() {
                 <p className="text-slate-500">Try adjusting your search terms or removing filters.</p>
                 <button 
                   onClick={() => {
-                    setQuery('');
                     setFilterType('All');
                     setFilterSpecialty('All');
                     setSearchParams({});

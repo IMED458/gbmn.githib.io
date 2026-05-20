@@ -46,7 +46,7 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
-                to="/issues/current" 
+                to="/archives" 
                 className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-sm font-semibold hover:border-slate-400 transition-all flex items-center"
               >
                 View Current Issue

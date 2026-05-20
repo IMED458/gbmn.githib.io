@@ -1,8 +1,5 @@
 {
   "name": "GBMN - Georgian Biomedical and Medical Nexus",
   "description": "An academic medical journal platform for the Georgian Biomedical and Medical Nexus (GBMN), formerly Georgian Biomedical News.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "requestFramePermissions": []
 }
