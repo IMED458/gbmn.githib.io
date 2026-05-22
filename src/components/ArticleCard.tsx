@@ -18,7 +18,7 @@ export default function ArticleCard({ article, imageSide = 'left' }: ArticleCard
   const image = hasImage ? (
     <Link
       to={`/article/${article.slug}`}
-      className="block aspect-[16/9] w-full overflow-hidden rounded-sm bg-slate-100 md:w-48 lg:w-56 xl:w-64 shrink-0"
+      className="block aspect-[16/9] w-56 max-w-full overflow-hidden rounded-sm bg-slate-100 sm:w-48 lg:w-56 xl:w-64 shrink-0"
       aria-label={article.title}
     >
       <img
@@ -32,11 +32,11 @@ export default function ArticleCard({ article, imageSide = 'left' }: ArticleCard
 
   return (
     <article className="group bg-white p-6 md:p-8 border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all duration-300 rounded-sm">
-      <div className={`flex flex-col gap-6 ${hasImage ? 'md:items-start' : ''} ${imageSide === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+      <div className={`flex flex-col gap-6 ${hasImage ? 'sm:items-start' : ''} ${imageSide === 'right' ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}>
         {image}
 
-        <div className={`flex min-w-0 flex-1 flex-col ${imageSide === 'right' ? 'md:text-right md:items-end' : ''}`}>
-          <div className={`flex flex-wrap items-center gap-3 mb-4 ${imageSide === 'right' ? 'md:justify-end' : 'justify-between'}`}>
+        <div className={`flex min-w-0 flex-1 flex-col ${imageSide === 'right' ? 'sm:text-right sm:items-end' : ''}`}>
+          <div className={`flex flex-wrap items-center gap-3 mb-4 ${imageSide === 'right' ? 'sm:justify-end' : 'justify-between'}`}>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 uppercase tracking-tight">
               {article.type}
             </span>
@@ -51,20 +51,20 @@ export default function ArticleCard({ article, imageSide = 'left' }: ArticleCard
             </h3>
           </Link>
 
-          <div className={`space-y-2 mb-6 ${imageSide === 'right' ? 'md:ml-auto' : ''}`}>
-            <div className={`flex items-center text-xs text-slate-500 ${imageSide === 'right' ? 'md:justify-end' : ''}`}>
+          <div className={`space-y-2 mb-6 ${imageSide === 'right' ? 'sm:ml-auto' : ''}`}>
+            <div className={`flex items-center text-xs text-slate-500 ${imageSide === 'right' ? 'sm:justify-end' : ''}`}>
               <User className="w-3.5 h-3.5 mr-1.5 opacity-60 shrink-0" />
               <span className="font-medium uppercase tracking-tight truncate">
                 {article.authors.map(a => a.name).join(', ')}
               </span>
             </div>
-            <div className={`flex items-center text-xs text-slate-500 ${imageSide === 'right' ? 'md:justify-end' : ''}`}>
+            <div className={`flex items-center text-xs text-slate-500 ${imageSide === 'right' ? 'sm:justify-end' : ''}`}>
               <Calendar className="w-3.5 h-3.5 mr-1.5 opacity-60 shrink-0" />
               <span>Published in Volume {article.volume}, Issue {article.issue} ({article.year})</span>
             </div>
           </div>
 
-          <div className={`flex w-full flex-col gap-3 pt-4 border-t border-gray-50 sm:flex-row sm:items-center sm:justify-between ${imageSide === 'right' ? 'md:flex-row-reverse' : ''}`}>
+          <div className={`flex w-full flex-col gap-3 pt-4 border-t border-gray-50 sm:flex-row sm:items-center sm:justify-between ${imageSide === 'right' ? 'sm:flex-row-reverse' : ''}`}>
             <div className="flex space-x-3">
               <Link
                 to={`/article/${article.slug}`}
