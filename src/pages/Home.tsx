@@ -108,12 +108,25 @@ export default function Home() {
           <div className="bg-slate-900 text-white p-8 rounded-sm shadow-xl">
              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400 mb-6 underline underline-offset-8">Current Issue</h3>
              <div className="flex items-start space-x-6">
-                <div className="shrink-0 w-24 h-32 bg-white flex flex-col items-center justify-center border-l-4 border-blue-600 shadow-inner">
-                   <p className="text-slate-900 font-serif font-black text-2xl">GBMN</p>
-                   <p className="text-slate-500 text-[10px] font-bold mt-1">2024</p>
+                <div className="shrink-0 w-24 overflow-hidden rounded-sm bg-white shadow-inner">
+                   {currentIssue?.coverImageUrl ? (
+                     <img
+                       src={currentIssue.coverImageUrl}
+                       alt={currentIssue.coverImageAlt ?? `GBMN Volume ${currentIssue.volume}, Issue ${currentIssue.issue}`}
+                       className="h-auto w-full"
+                     />
+                   ) : (
+                     <div className="flex h-32 flex-col items-center justify-center border-l-4 border-blue-600">
+                       <p className="text-slate-900 font-serif font-black text-2xl">GBMN</p>
+                       <p className="text-slate-500 text-[10px] font-bold mt-1">2024</p>
+                     </div>
+                   )}
                 </div>
                 <div>
                    <p className="text-lg font-bold font-serif leading-tight mb-2">Volume 5, Issue 1</p>
+                   {currentIssue?.coverCaption && (
+                     <p className="text-[10px] font-bold uppercase tracking-widest text-blue-300 mb-2">{currentIssue.coverCaption}</p>
+                   )}
                    <p className="text-xs text-slate-400 mb-4 tracking-tighter">Published {currentIssue?.year}</p>
                    <Link to="/archives" className="text-xs font-bold bg-white/10 hover:bg-white/20 px-4 py-2 rounded-sm block text-center transition-colors">
                      Table of Contents

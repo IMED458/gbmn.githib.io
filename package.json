@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && cp dist/app.html dist/index.html && cp -R documents dist/documents",
+    "build": "vite build && cp dist/app.html dist/index.html && cp -R documents dist/documents && cp -R images dist/images",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"

@@ -74,6 +74,21 @@ export default function ArticleDetail() {
              </div>
           </div>
 
+          {article.imageUrl && (
+            <figure className="mb-12 overflow-hidden rounded-sm border border-gray-100 bg-slate-50">
+              <img
+                src={article.imageUrl}
+                alt={article.imageAlt ?? article.title}
+                className="h-auto w-full object-cover"
+              />
+              {article.imageAlt && (
+                <figcaption className="px-4 py-3 text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                  {article.imageAlt}
+                </figcaption>
+              )}
+            </figure>
+          )}
+
           {/* Abstract */}
           <section className="mb-16">
             <h2 className="text-xl font-bold uppercase tracking-[0.2em] text-slate-900 mb-6 flex items-center border-b-2 border-slate-900 pb-2 inline-block">
@@ -196,6 +211,16 @@ export default function ArticleDetail() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                {ARTICLES.filter(a => a.id !== article.id).slice(0, 3).map(a => (
                  <Link key={a.id} to={`/article/${a.slug}`} className="group bg-white p-6 border border-gray-100 hover:shadow-lg transition-all rounded-sm">
+                    {a.imageUrl && (
+                      <div className="mb-5 aspect-[16/9] overflow-hidden rounded-sm bg-slate-100">
+                        <img
+                          src={a.imageUrl}
+                          alt={a.imageAlt ?? a.title}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
                     <span className="text-[10px] font-bold text-blue-600 uppercase mb-2 block">{a.type}</span>
                     <h4 className="font-bold font-serif text-slate-900 group-hover:text-blue-700 mb-4 line-clamp-2">{a.title}</h4>
                     <p className="text-xs text-slate-500 uppercase tracking-tighter">{a.authors[0].name}, et al.</p>

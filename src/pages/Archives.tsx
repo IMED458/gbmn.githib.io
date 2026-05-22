@@ -4,13 +4,18 @@
  */
 
 import { Link } from 'react-router-dom';
-import { Book, History, ChevronRight, FileText } from 'lucide-react';
+import { History, ChevronRight, FileText } from 'lucide-react';
 import { ISSUES, ARTICLES } from '../data';
-import { cn } from '../lib/utils';
 
 export default function Archives() {
   // Group issues by year
   const years = Array.from(new Set(ISSUES.map(i => i.year))).sort((a, b) => b - a);
+  const legacyCovers = [
+    { src: 'images/issues/issue-n1.jpg', alt: 'GBMN first edition cover' },
+    { src: 'images/issues/issue-n2.png', alt: 'GBMN second edition cover' },
+    { src: 'images/issues/issue-n3-4.jpg', alt: 'Issues 3 and 4 cover' },
+    { src: 'images/issues/issue-n5.jpg', alt: 'GBMN fifth edition cover' }
+  ];
 
   return (
     <div className="bg-white min-h-screen">
@@ -52,6 +57,23 @@ export default function Archives() {
                             LATEST ISSUE
                           </div>
                         )}
+                        {issue.coverImageUrl && (
+                          <div className="mb-6 flex items-start gap-5">
+                            <div className="w-24 shrink-0 overflow-hidden rounded-sm border border-gray-100 bg-slate-50 shadow-sm">
+                              <img
+                                src={issue.coverImageUrl}
+                                alt={issue.coverImageAlt ?? `GBMN Volume ${issue.volume}, Issue ${issue.issue}`}
+                                loading="lazy"
+                                className="h-auto w-full"
+                              />
+                            </div>
+                            {issue.coverCaption && (
+                              <div className="pt-1 text-[10px] font-bold uppercase tracking-widest text-blue-600">
+                                {issue.coverCaption}
+                              </div>
+                            )}
+                          </div>
+                        )}
                         <h3 className="text-xl font-bold font-serif text-slate-900 mb-2">Volume {issue.volume}, Issue {issue.issue}</h3>
                         <p className="text-xs text-slate-500 mb-6 uppercase tracking-widest font-semibold">{issue.isCurrent ? 'Current Publication' : 'Archived Issue'}</p>
                         
@@ -82,11 +104,12 @@ export default function Archives() {
                       Explore Historical Back-Issues
                    </button>
                 </div>
-                <div className="w-full md:w-48 h-64 bg-slate-200 rounded-sm flex items-center justify-center border-4 border-white shadow-lg overflow-hidden">
-                   <div className="flex flex-col items-center opacity-30">
-                      <Book className="w-12 h-12 mb-2" />
-                      <span className="font-serif font-black text-xl">GBN</span>
-                   </div>
+                <div className="grid w-full grid-cols-4 gap-3 md:w-64">
+                  {legacyCovers.map(cover => (
+                    <div key={cover.src} className="overflow-hidden rounded-sm border-4 border-white bg-slate-200 shadow-lg">
+                      <img src={cover.src} alt={cover.alt} loading="lazy" className="h-full w-full object-cover" />
+                    </div>
+                  ))}
                 </div>
              </div>
            </div>

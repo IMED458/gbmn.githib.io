@@ -10,6 +10,8 @@ export const ARTICLES: Article[] = [
     id: 'art-001',
     slug: 'exosomes-modulators-atherosclerosis',
     title: 'Exosomes as Modulators of Atherosclerosis: Pathogenetic Insights and Therapeutic Potential',
+    imageUrl: 'images/articles/exosomes-heart-tissue.jpg',
+    imageAlt: 'Heart Tissue Anatomy',
     authors: [
       { name: 'GAMKRELIDZE N.', affiliation: 'Tbilisi State Medical University' },
       { name: 'PAVLIASHVILI N.', affiliation: 'Tbilisi State Medical University' },
@@ -38,6 +40,8 @@ export const ARTICLES: Article[] = [
     id: 'art-002',
     slug: 'incidence-pertussis-children-post-covid',
     title: 'Incidence and Clinical Severity of Pertussis in Children after the COVID-19 Pandemic: A Comparative Study of Unvaccinated and Partially Vaccinated Patients',
+    imageUrl: 'images/articles/pertussis-mother-and-daughter.jpeg',
+    imageAlt: 'Mother and Daughter',
     authors: [
       { name: 'KORINTELI I.', affiliation: 'Department of Pediatrics, TSMU' },
       { name: 'JAVAKHADZE M.', affiliation: 'M. Iashvili Children\'s Central Hospital' },
@@ -66,6 +70,8 @@ export const ARTICLES: Article[] = [
     id: 'art-003',
     slug: 'carotid-artery-pseudoaneurysm-lithium-battery',
     title: 'Left Common Carotid Artery Pseudoaneurysm After Unwitnessed Lithium Button Battery Ingestion in a Toddler: Successful Endovascular Hemostasis Following Life-Threatening Bleeding',
+    imageUrl: 'images/articles/carotid-pseudoaneurysm-case.png',
+    imageAlt: 'Clinical case image from the old GBMN article page',
     authors: [
       { name: 'Anonymous Case Contributors', affiliation: 'Emergency Medicine Institute' }
     ],
@@ -92,6 +98,9 @@ export const ISSUES: Issue[] = [
     volume: 5,
     issue: 1,
     year: 2024,
+    coverImageUrl: 'images/issues/issue-n5.jpg',
+    coverImageAlt: 'GBMN fifth edition cover',
+    coverCaption: 'NEW PRINT ISSUE',
     isCurrent: true,
     articles: ['art-001', 'art-002', 'art-003']
   },
@@ -99,12 +108,18 @@ export const ISSUES: Issue[] = [
     volume: 4,
     issue: 2,
     year: 2023,
+    coverImageUrl: 'images/issues/issue-n3-4.jpg',
+    coverImageAlt: 'Issues 3 and 4 cover',
+    coverCaption: 'THIRD ISSUE OF GBMN',
     articles: []
   },
   {
     volume: 4,
     issue: 1,
     year: 2023,
+    coverImageUrl: 'images/issues/issue-n4-1.png',
+    coverImageAlt: 'GBMN Volume 2 Issue 1 cover',
+    coverCaption: 'FOURTH ISSUE',
     articles: []
   }
 ];

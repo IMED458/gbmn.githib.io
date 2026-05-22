@@ -15,6 +15,21 @@ interface ArticleCardProps {
 export default function ArticleCard({ article }: ArticleCardProps) {
   return (
     <article className="group bg-white p-6 md:p-8 border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all duration-300 flex flex-col h-full rounded-sm">
+      {article.imageUrl && (
+        <Link
+          to={`/article/${article.slug}`}
+          className="mb-6 block aspect-[16/9] overflow-hidden rounded-sm bg-slate-100"
+          aria-label={article.title}
+        >
+          <img
+            src={article.imageUrl}
+            alt={article.imageAlt ?? article.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </Link>
+      )}
+
       <div className="flex items-center justify-between mb-4">
         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 uppercase tracking-tight">
           {article.type}

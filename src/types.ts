@@ -15,6 +15,8 @@ export interface Article {
   id: string;
   slug: string;
   title: string;
+  imageUrl?: string;
+  imageAlt?: string;
   authors: Author[];
   type: ArticleType;
   abstract: string;
@@ -34,6 +36,9 @@ export interface Issue {
   volume: number;
   issue: number;
   year: number;
+  coverImageUrl?: string;
+  coverImageAlt?: string;
+  coverCaption?: string;
   isCurrent?: boolean;
   articles: string[]; // Array of article IDs
 }
