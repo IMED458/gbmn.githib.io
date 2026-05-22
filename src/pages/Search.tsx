@@ -141,8 +141,8 @@ export default function Search() {
 
            {results.length > 0 ? (
              <div className="space-y-8">
-               {results.map(article => (
-                 <ArticleCard key={article.id} article={article} />
+               {results.map((article, index) => (
+                 <ArticleCard key={article.id} article={article} imageSide={index % 2 === 0 ? 'left' : 'right'} />
                ))}
              </div>
            ) : (

@@ -75,11 +75,11 @@ export default function ArticleDetail() {
           </div>
 
           {article.imageUrl && (
-            <figure className="mb-12 overflow-hidden rounded-sm border border-gray-100 bg-slate-50">
+            <figure className="mb-12 max-w-md overflow-hidden rounded-sm border border-gray-100 bg-slate-50">
               <img
                 src={article.imageUrl}
                 alt={article.imageAlt ?? article.title}
-                className="h-auto w-full object-cover"
+                className="aspect-[16/9] w-full object-cover"
               />
               {article.imageAlt && (
                 <figcaption className="px-4 py-3 text-[10px] font-semibold uppercase tracking-widest text-slate-400">

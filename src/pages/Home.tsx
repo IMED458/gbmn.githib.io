@@ -96,8 +96,8 @@ export default function Home() {
             </Link>
           </div>
           <div className="space-y-8">
-            {latestArticles.map(article => (
-              <ArticleCard key={article.id} article={article} />
+            {latestArticles.map((article, index) => (
+              <ArticleCard key={article.id} article={article} imageSide={index % 2 === 0 ? 'left' : 'right'} />
             ))}
           </div>
         </section>
